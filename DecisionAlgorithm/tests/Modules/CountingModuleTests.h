@@ -9,7 +9,7 @@ public:
 	static void runTests();
 
 private:
-	static std::list<MusicData> getMusicTestData();
+	static std::list<MusicData*> getMusicTestData();
 
 	static void test_1();
 

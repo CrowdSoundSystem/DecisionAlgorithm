@@ -4,9 +4,9 @@ void CountingModuleTests::runTests() {
 	test_1();
 }
 
-std::list<MusicData> CountingModuleTests::getMusicTestData() {
+std::list<MusicData*> CountingModuleTests::getMusicTestData() {
 
-	std::list<MusicData> musicData();
+	std::list<MusicData*> musicData;
 
 
 	return musicData;
