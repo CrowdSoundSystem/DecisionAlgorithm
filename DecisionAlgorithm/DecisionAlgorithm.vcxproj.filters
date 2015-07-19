@@ -29,6 +29,12 @@
     <ClCompile Include="src\Common\MusicData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tests\TestMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\Modules\CountingModuleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Modules\CountingModule.h">
@@ -47,5 +53,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Common\MusicData.h" />
+    <ClInclude Include="tests\TestMain.h" />
+    <ClInclude Include="tests\Modules\CountingModuleTests.h" />
   </ItemGroup>
 </Project>

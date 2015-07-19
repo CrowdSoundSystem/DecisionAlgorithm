@@ -71,6 +71,8 @@
     <ClCompile Include="src\Modules\GenerationModule.cpp" />
     <ClCompile Include="src\Modules\TierModule.cpp" />
     <ClCompile Include="src\Modules\VotingModule.cpp" />
+    <ClCompile Include="tests\Modules\CountingModuleTests.cpp" />
+    <ClCompile Include="tests\TestMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Common\MusicData.h" />
@@ -79,6 +81,8 @@
     <ClInclude Include="src\Modules\GenerationModule.h" />
     <ClInclude Include="src\Modules\TierModule.h" />
     <ClInclude Include="src\Modules\VotingModule.h" />
+    <ClInclude Include="tests\Modules\CountingModuleTests.h" />
+    <ClInclude Include="tests\TestMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
