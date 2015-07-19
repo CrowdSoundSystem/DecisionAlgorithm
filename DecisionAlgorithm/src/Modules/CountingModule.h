@@ -4,12 +4,13 @@
 #include <list>
 
 #include "..\Common\MusicData.h"
+#include "..\Common\Const.h"
 
 class CountingModule {
 
 public:
 
-	static void run(std::list<MusicData>*);
+	static void run(MusicDataList*);
 
 };
 

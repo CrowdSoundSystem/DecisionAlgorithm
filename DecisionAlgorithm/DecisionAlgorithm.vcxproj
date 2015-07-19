@@ -75,6 +75,7 @@
     <ClCompile Include="tests\TestMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Common\Const.h" />
     <ClInclude Include="src\Common\MusicData.h" />
     <ClInclude Include="src\DecisionAlgorithm.h" />
     <ClInclude Include="src\Modules\CountingModule.h" />

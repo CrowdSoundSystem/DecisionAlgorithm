@@ -1,6 +1,6 @@
 #include "GenerationModule.h"
 
-void GenerationModule::run(std::list<MusicData>* musicDataSet) {
+void GenerationModule::run(MusicDataList* musicDataSet) {
 
 
 

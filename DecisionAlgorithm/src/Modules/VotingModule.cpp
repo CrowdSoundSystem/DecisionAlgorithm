@@ -1,6 +1,6 @@
 #include "VotingModule.h"
 
-void VotingModule::run(std::list<MusicData>* musicDataSet) {
+void VotingModule::run(MusicDataList* musicDataSet) {
 
 
 

@@ -55,5 +55,6 @@
     <ClInclude Include="src\Common\MusicData.h" />
     <ClInclude Include="tests\TestMain.h" />
     <ClInclude Include="tests\Modules\CountingModuleTests.h" />
+    <ClInclude Include="src\Common\Const.h" />
   </ItemGroup>
 </Project>

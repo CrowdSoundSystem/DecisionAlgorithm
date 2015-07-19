@@ -1,6 +1,6 @@
 #include "TierModule.h"
 
-void TierModule::run(std::list<MusicData>* musicDataSet) {
+void TierModule::run(MusicDataList* musicDataSet) {
 
 
 

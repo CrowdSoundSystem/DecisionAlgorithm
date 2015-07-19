@@ -4,6 +4,7 @@
 #include <list>
 
 #include "Common\MusicData.h"
+#include "Common\Const.h"
 
 class DecisionAlgorithm {
 
@@ -18,7 +19,7 @@ public:
 
 private:
 
-	std::list<MusicData> m_musicDataList;
+	MusicDataList m_musicDataList;
 
 
 };
