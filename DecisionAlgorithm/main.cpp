@@ -5,9 +5,11 @@
 int main()
 {
 
-	DecisionAlgorithm algorithm();
+	DecisionAlgorithm algorithm;
 
-
+	while (true) {
+		algorithm.run();
+	}
 
 
 

@@ -3,3 +3,15 @@
 DecisionAlgorithm::DecisionAlgorithm() {
 
 }
+
+void DecisionAlgorithm::getMusicData() {
+
+}
+
+void DecisionAlgorithm::run() {
+
+
+
+
+}
+

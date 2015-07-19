@@ -26,6 +26,9 @@
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Common\MusicData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Modules\CountingModule.h">
@@ -43,5 +46,6 @@
     <ClInclude Include="src\DecisionAlgorithm.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Common\MusicData.h" />
   </ItemGroup>
 </Project>
