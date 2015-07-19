@@ -1,3 +1,6 @@
+#ifndef DecisionAlgorithm_HEADER
+#define DecisionAlgorithm_HEADER
+
 #include <list>
 
 #include "Common\MusicData.h"
@@ -20,4 +23,5 @@ private:
 
 };
 
+#endif
 

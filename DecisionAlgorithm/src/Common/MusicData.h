@@ -1,3 +1,6 @@
+#ifndef MusicData_HEADER
+#define MusicData_HEADER
+
 #include <string>
 
 class MusicData {
@@ -19,3 +22,5 @@ private:
 	double m_weight;
 
 };
+
+#endif
