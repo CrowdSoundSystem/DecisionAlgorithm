@@ -11,11 +11,15 @@ DecisionAlgorithm::DecisionAlgorithm() {
 
 void DecisionAlgorithm::getMusicData() {
 
+	// TEMP
+
+	// END TEMP
+
 }
 
 void DecisionAlgorithm::run() {
 
-
+	CountingModule::run(&m_musicDataList);
 
 
 }
