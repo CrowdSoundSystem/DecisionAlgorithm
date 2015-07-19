@@ -13,3 +13,16 @@ void MusicData::setWeight(double weight) {
 double MusicData::getWeight(){
 	return m_weight;
 }
+
+void MusicData::addWeight(double value) {
+	m_weight += value;
+}
+
+void MusicData::subWeight(double value) {
+	m_weight -= value;
+}
+
+void MusicData::mulWeight(double value) {
+	m_weight *= value;
+}
+

@@ -7,7 +7,14 @@ class MusicData {
 
 public:
 
-	MusicData(std::string, std::string, std::string);
+	MusicData(std::string, std::string, std::string)
+		: m_weight(0)
+	{
+	}
+
+	void addWeight(double);
+	void subWeight(double);
+	void mulWeight(double);
 
 	void setWeight(double);
 	double getWeight();
