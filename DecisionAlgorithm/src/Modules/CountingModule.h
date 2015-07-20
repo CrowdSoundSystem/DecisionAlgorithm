@@ -11,7 +11,7 @@ class CountingModule {
 
 public:
 
-	static void run(DecisionSettings, MusicDataList*);
+	static void run(DecisionSettings&, MusicDataList&);
 
 };
 

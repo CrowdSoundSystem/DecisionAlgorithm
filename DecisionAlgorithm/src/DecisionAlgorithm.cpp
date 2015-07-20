@@ -15,7 +15,7 @@ void DecisionAlgorithm::getMusicData() {
 
 void DecisionAlgorithm::run() {
 
-	CountingModule::run(&m_musicDataList);
+	CountingModule::run(m_settings, m_musicDataList);
 
 
 }
