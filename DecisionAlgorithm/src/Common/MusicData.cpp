@@ -1,6 +1,8 @@
 #include "MusicData.h"
 
-MusicData::MusicData(std::string artist, std::string song, std::string genre) {
+MusicData::MusicData(std::string artist, std::string song, std::string genre)
+	: m_weight(0) 
+{
 	m_artist = artist;
 	m_song = song;
 	m_genre = genre;

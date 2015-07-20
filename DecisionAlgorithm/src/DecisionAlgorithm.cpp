@@ -5,10 +5,6 @@
 #include "Modules\TierModule.h"
 #include "Modules\VotingModule.h"
 
-DecisionAlgorithm::DecisionAlgorithm() {
-
-}
-
 void DecisionAlgorithm::getMusicData() {
 
 	// TEMP

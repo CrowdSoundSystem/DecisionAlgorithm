@@ -3,14 +3,18 @@
 
 #include <list>
 
-#include "Common\MusicData.h"
 #include "Common\Const.h"
+#include "Common\DecisionSettings.h"
+#include "Common\MusicData.h"
 
 class DecisionAlgorithm {
 
 public:
 
-	DecisionAlgorithm();
+	DecisionAlgorithm(DecisionSettings settings)
+		: m_settings(settings)
+	{
+	}
 
 	void getMusicData();
 
@@ -20,7 +24,7 @@ public:
 private:
 
 	MusicDataList m_musicDataList;
-
+	DecisionSettings m_settings;
 
 };
 

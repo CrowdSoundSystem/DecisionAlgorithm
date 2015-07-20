@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Common\MusicData.cpp" />
+    <ClCompile Include="src\Common\DecisionSettings.h" />
     <ClCompile Include="src\DecisionAlgorithm.cpp" />
     <ClCompile Include="src\Modules\CountingModule.cpp" />
     <ClCompile Include="src\Modules\GenerationModule.cpp" />

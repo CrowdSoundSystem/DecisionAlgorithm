@@ -35,6 +35,9 @@
     <ClCompile Include="tests\Modules\CountingModuleTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Common\DecisionSettings.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Modules\CountingModule.h">
