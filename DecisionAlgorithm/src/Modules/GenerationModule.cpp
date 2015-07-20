@@ -1,6 +1,6 @@
 #include "GenerationModule.h"
 
-void GenerationModule::run(MusicDataList* musicDataSet) {
+void GenerationModule::run(DecisionSettings settings, MusicDataList* musicDataSet) {
 
 
 

@@ -1,10 +1,10 @@
 #include "CountingModule.h"
 
-void CountingModule::run(MusicDataList* musicDataSet) {
+void CountingModule::run(DecisionSettings settings, MusicDataList* musicDataSet) {
 
 	MusicDataList::iterator setItr;
 	for (setItr = musicDataSet->begin(); setItr != musicDataSet->end(); ++setItr) {
-		(*setItr)->addWeight(1.0);
+		(*setItr)->addWeight(settings.m_countWeight);
 	}
 
 }

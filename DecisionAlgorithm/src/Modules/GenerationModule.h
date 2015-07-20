@@ -3,6 +3,7 @@
 
 #include <list>
 
+#include "..\Common\DecisionSettings.h"
 #include "..\Common\MusicData.h"
 #include "..\Common\Const.h"
 
@@ -10,7 +11,7 @@ class GenerationModule {
 
 public:
 
-	static void run(MusicDataList*);
+	static void run(DecisionSettings, MusicDataList*);
 
 };
 

@@ -1,6 +1,6 @@
 #include "VotingModule.h"
 
-void VotingModule::run(MusicDataList* musicDataSet) {
+void VotingModule::run(DecisionSettings settings, MusicDataList* musicDataSet) {
 
 
 
