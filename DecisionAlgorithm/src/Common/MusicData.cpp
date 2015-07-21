@@ -1,10 +1,24 @@
 #include "MusicData.h"
 
 MusicData::Tier MusicData::getTier() {
-	return m_tier;
+
+	switch (m_tier)
+	{
+		case Tier_S:
+		case Tier_A:
+		case Tier_G:
+		case Tier_SG:
+		case Tier_SA:
+		case Tier_AG:
+		case Tier_SAG:
+			return static_cast<Tier>(m_tier);
+		default:
+			return Tier_INVALID;
+	}
 }
 
 void MusicData::addArtist(std::string artist){
+	m_tier |= Tier_A;
 	m_artist = artist;
 }
 
@@ -13,6 +27,7 @@ std::string MusicData::getArtist(){
 }
 
 void MusicData::addSong(std::string song){
+	m_tier |= Tier_S;
 	m_song = song;
 }
 
@@ -21,6 +36,7 @@ std::string MusicData::getSong(){
 }
 
 void MusicData::addGenre(std::string genre){
+	m_tier |= Tier_G;
 	m_genre = genre;
 }
 

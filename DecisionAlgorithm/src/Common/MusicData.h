@@ -8,13 +8,17 @@ class MusicData {
 public:
 
 	enum Tier {
-		Tier_S = 1,
-		Tier_A,
-		Tier_G,
-		Tier_SG,
-		Tier_SA,
-		Tier_AG,
-		Tier_SAG
+		Tier_INVALID = 0,
+
+		Tier_S = (1u << 0),
+		Tier_A = (1u << 1),
+		Tier_G = (1u << 2),
+
+		Tier_SG = Tier_S + Tier_G,
+		Tier_SA = Tier_S + Tier_A,
+		Tier_AG = Tier_A + Tier_G,
+
+		Tier_SAG = Tier_S + Tier_A + Tier_G
 	};
 
 	MusicData::MusicData()
@@ -43,7 +47,7 @@ public:
 
 private:
 
-	Tier m_tier;
+	int m_tier;
 
 	std::string m_artist;
 	std::string m_song;
