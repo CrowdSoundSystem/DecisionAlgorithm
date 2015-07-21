@@ -1,11 +1,31 @@
 #include "MusicData.h"
 
-MusicData::MusicData(std::string artist, std::string song, std::string genre)
-	: m_weight(0), m_voteSum(0)
-{
+MusicData::Tier MusicData::getTier() {
+	return m_tier;
+}
+
+void MusicData::addArtist(std::string artist){
 	m_artist = artist;
+}
+
+std::string MusicData::getArtist(){
+	return m_artist;
+}
+
+void MusicData::addSong(std::string song){
 	m_song = song;
+}
+
+std::string MusicData::getSong(){
+	return m_song;
+}
+
+void MusicData::addGenre(std::string genre){
 	m_genre = genre;
+}
+
+std::string MusicData::getGenre(){
+	return m_genre;
 }
 
 void MusicData::setWeight(double weight) {
