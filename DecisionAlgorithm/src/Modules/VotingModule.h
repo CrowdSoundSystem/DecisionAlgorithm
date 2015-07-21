@@ -12,6 +12,7 @@ class VotingModule {
 public:
 
 	static void run(DecisionSettings&, MusicDataList&);
+	static float getVoteWeight(DecisionSettings&);
 
 };
 

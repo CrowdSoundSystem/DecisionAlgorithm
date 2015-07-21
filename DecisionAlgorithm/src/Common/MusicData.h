@@ -13,6 +13,9 @@ public:
 	void subWeight(double);
 	void mulWeight(double);
 
+	void setVoteSum(int);
+	int getVoteSum();
+
 	void setWeight(double);
 	double getWeight();
 
@@ -24,6 +27,8 @@ private:
 	std::string m_genre;
 
 	double m_weight;
+
+	int m_voteSum;
 
 };
 
