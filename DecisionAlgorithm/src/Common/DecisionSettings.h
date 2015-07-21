@@ -1,7 +1,10 @@
 #ifndef DecisionSettings_HEADER
 #define DecisionSettings_HEADER
 
+#include <map>
+
 #include "Const.h"
+#include "MusicData.h"
 
 struct DecisionSettings {
 
@@ -18,13 +21,7 @@ struct DecisionSettings {
 	VoteWeight m_songGenreWeight;	// Voting for song, weight for given genre
 	VoteWeight m_artistGenreWeight;	// Voting for artist, weight for given genre
 
-	float m_tierMultiplierSAG;
-	float m_tierMultiplierSA;
-	float m_tierMultiplierSG;
-	float m_tierMultiplierAG;
-	float m_tierMultiplierS;
-	float m_tierMultiplierA;
-	float m_tierMultiplierG;
+	std::map<Tier, float> m_tierMultipliers;
 
 };
 

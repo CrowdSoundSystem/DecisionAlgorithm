@@ -17,13 +17,13 @@ int main()
 	settings.m_songGenreWeight = DecisionSettings::VoteWeight_Equal;
 	settings.m_artistGenreWeight = DecisionSettings::VoteWeight_Equal;
 
-	settings.m_tierMultiplierSAG = 1.0f;
-	settings.m_tierMultiplierSA = 0.9f;
-	settings.m_tierMultiplierSG = 0.8f;
-	settings.m_tierMultiplierAG = 0.7f;
-	settings.m_tierMultiplierS = 0.6f;
-	settings.m_tierMultiplierA = 0.5f;
-	settings.m_tierMultiplierG = 0.4f;
+	settings.m_tierMultipliers[Tier_SAG] = 1.0f;
+	settings.m_tierMultipliers[Tier_SA] = 0.9f;
+	settings.m_tierMultipliers[Tier_SG] = 0.8f;
+	settings.m_tierMultipliers[Tier_AG] = 0.7f;
+	settings.m_tierMultipliers[Tier_S] = 0.6f;
+	settings.m_tierMultipliers[Tier_A] = 0.5f;
+	settings.m_tierMultipliers[Tier_G] = 0.4f;
 
 
 	

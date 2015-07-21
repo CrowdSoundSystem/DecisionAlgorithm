@@ -3,23 +3,23 @@
 
 #include <string>
 
+enum Tier {
+	Tier_INVALID = 0,
+
+	Tier_S = (1u << 0),
+	Tier_A = (1u << 1),
+	Tier_G = (1u << 2),
+
+	Tier_SG = Tier_S + Tier_G,
+	Tier_SA = Tier_S + Tier_A,
+	Tier_AG = Tier_A + Tier_G,
+
+	Tier_SAG = Tier_S + Tier_A + Tier_G
+};
+
 class MusicData {
 
 public:
-
-	enum Tier {
-		Tier_INVALID = 0,
-
-		Tier_S = (1u << 0),
-		Tier_A = (1u << 1),
-		Tier_G = (1u << 2),
-
-		Tier_SG = Tier_S + Tier_G,
-		Tier_SA = Tier_S + Tier_A,
-		Tier_AG = Tier_A + Tier_G,
-
-		Tier_SAG = Tier_S + Tier_A + Tier_G
-	};
 
 	MusicData::MusicData()
 		: m_weight(0), m_voteSum(0)

@@ -1,6 +1,6 @@
 #include "MusicData.h"
 
-MusicData::Tier MusicData::getTier() {
+Tier MusicData::getTier() {
 
 	switch (m_tier)
 	{
