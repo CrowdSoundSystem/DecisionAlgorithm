@@ -104,12 +104,16 @@ void TierModuleTests::test_2() {
 
 	TierModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		if (data.getTier() == Tier_SAG) {
-			assert(data.getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		if ((*itr).getTier() == Tier_SAG) {
+			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
 		} else {
-			assert(data.getWeight() == 1.0);
+			assert((*itr).getWeight() == 1.0);
 		}
+
+		++itr;
 	}
 }
 
@@ -125,17 +129,21 @@ void TierModuleTests::test_3() {
 
 	TierModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		if (data.getTier() == Tier_SAG) {
-			assert(data.getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
-		} else if (data.getTier() == Tier_AG) {
-			assert(data.getWeight() == 1.0 * settings.m_tierMultipliers[Tier_AG]);
-		} else if (data.getTier() == Tier_SA) {
-			assert(data.getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SA]);
-		} else if (data.getTier() == Tier_SG) {
-			assert(data.getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SG]);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		if ((*itr).getTier() == Tier_SAG) {
+			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
+		} else if ((*itr).getTier() == Tier_AG) {
+			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_AG]);
+		} else if ((*itr).getTier() == Tier_SA) {
+			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SA]);
+		} else if ((*itr).getTier() == Tier_SG) {
+			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SG]);
 		} else {
-			assert(data.getWeight() == 1.0);
+			assert((*itr).getWeight() == 1.0);
 		}
+
+		++itr;
 	}
 }

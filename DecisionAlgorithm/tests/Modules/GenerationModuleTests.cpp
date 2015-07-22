@@ -57,8 +57,12 @@ void GenerationModuleTests::test_1() {
 	assert(outputSet.size() == 3);
 
 	double previousWeight = 100.0;
-	for each (MusicData data in outputSet) {
-		assert(data.getWeight() < previousWeight);
-		previousWeight = data.getWeight();
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		assert((*itr).getWeight() < previousWeight);
+		previousWeight = (*itr).getWeight();
+
+		++itr;
 	}
 }

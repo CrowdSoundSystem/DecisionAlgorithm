@@ -34,8 +34,12 @@ void CountingModuleTests::test_1() {
 
 	CountingModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		assert(data.getWeight() == 1.0f);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		assert((*itr).getWeight() == 1.0f);
+
+		++itr;
 	}
 
 }

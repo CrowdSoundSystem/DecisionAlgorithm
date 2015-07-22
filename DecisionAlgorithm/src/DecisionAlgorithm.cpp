@@ -20,9 +20,12 @@ void DecisionAlgorithm::run() {
 	TierModule::run(m_settings, m_musicDataList);
 	GenerationModule::run(m_settings, m_musicDataList, nextSet);
 
-	for each (MusicData song in nextSet)
+	MusicDataList::iterator itr = nextSet.begin();
+	while (itr != nextSet.end())
 	{
 		// TEMP: Push to DB
+
+		++itr;
 	}
 
 }

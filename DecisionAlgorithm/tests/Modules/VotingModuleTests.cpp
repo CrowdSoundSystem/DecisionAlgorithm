@@ -40,8 +40,12 @@ void VotingModuleTests::test_1() {
 
 	VotingModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		assert(data.getWeight() == data.getVoteSum()*settings.m_countWeight);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight);
+
+		++itr;
 	}
 }
 
@@ -55,8 +59,12 @@ void VotingModuleTests::test_2() {
 
 	VotingModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		assert(data.getWeight() == data.getVoteSum()*settings.m_countWeight*1.5);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight*1.5);
+
+		++itr;
 	}
 }
 
@@ -70,7 +78,11 @@ void VotingModuleTests::test_3() {
 
 	VotingModule::run(settings, musicList);
 
-	for each (MusicData data in musicList) {
-		assert(data.getWeight() == data.getVoteSum()*settings.m_countWeight*0.5);
+	MusicDataList::iterator itr = musicList.begin();
+	while (itr != musicList.end())
+	{
+		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight*0.5);
+
+		++itr;
 	}
 }

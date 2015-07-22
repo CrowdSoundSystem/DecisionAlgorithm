@@ -5,13 +5,16 @@ void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataS
 	musicDataSet.sort(compareWeight);
 
 	int counter = 0;
-	for each (MusicData data in musicDataSet) {
-		nextSet.push_back(data);
+	MusicDataList::iterator itr = musicDataSet.begin();
+	while (itr != musicDataSet.end()) 
+	{
+		nextSet.push_back((*itr));
 		counter++;
 
 		if (counter == settings.m_numSongsGenerated) {
 			break;
 		}
+		++itr;
 	}
 
 }
