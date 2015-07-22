@@ -18,5 +18,5 @@ void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataS
 
 bool GenerationModule::compareWeight(const MusicData& first, const MusicData& second)
 {
-	return (first.getWeight() < second.getWeight());
+	return (first.getWeight() > second.getWeight());
 }
