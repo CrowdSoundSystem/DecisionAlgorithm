@@ -7,7 +7,7 @@
 
 void DecisionAlgorithm::getMusicData() {
 
-	// TEMP
+	// TEMP: Pull from DB
 
 }
 
@@ -22,7 +22,7 @@ void DecisionAlgorithm::run() {
 
 	for each (MusicData song in nextSet)
 	{
-		// TEMP
+		// TEMP: Push to DB
 	}
 
 }

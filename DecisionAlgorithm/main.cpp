@@ -35,10 +35,4 @@ int main()
 		algorithm.run();
 	}
 	
-
-
-
-
-
-	printf("\nHello World\n\n");
 }
