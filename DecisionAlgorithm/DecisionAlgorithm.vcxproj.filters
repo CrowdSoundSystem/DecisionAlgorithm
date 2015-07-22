@@ -41,6 +41,9 @@
     <ClCompile Include="tests\Modules\VotingModuleTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tests\Modules\TierModuleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Modules\CountingModule.h">
@@ -63,5 +66,6 @@
     <ClInclude Include="tests\Modules\CountingModuleTests.h" />
     <ClInclude Include="src\Common\Const.h" />
     <ClInclude Include="tests\Modules\VotingModuleTests.h" />
+    <ClInclude Include="tests\Modules\TierModuleTests.h" />
   </ItemGroup>
 </Project>

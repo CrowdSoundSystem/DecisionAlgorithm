@@ -22,7 +22,7 @@ class MusicData {
 public:
 
 	MusicData::MusicData()
-		: m_weight(0), m_voteSum(0)
+		: m_weight(0), m_voteSum(0), m_tier(0)
 	{}
 
 	void addArtist(std::string);
