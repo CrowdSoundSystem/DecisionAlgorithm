@@ -5,10 +5,10 @@ void VotingModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) 
 	MusicDataList::iterator setItr;
 	for (setItr = musicDataSet.begin(); setItr != musicDataSet.end(); ++setItr) {
 
-		int voteSum = (*setItr)->getVoteSum();
+		int voteSum = (*setItr).getVoteSum();
 		float voteWeight = getVoteWeight(settings);
 
-		(*setItr)->addWeight(voteSum*voteWeight);
+		(*setItr).addWeight(voteSum*voteWeight);
 	}
 
 }

@@ -9,14 +9,21 @@ void DecisionAlgorithm::getMusicData() {
 
 	// TEMP
 
-	// END TEMP
-
 }
 
 void DecisionAlgorithm::run() {
 
+	MusicDataList nextSet;
+
 	CountingModule::run(m_settings, m_musicDataList);
 	VotingModule::run(m_settings, m_musicDataList);
+	TierModule::run(m_settings, m_musicDataList);
+	GenerationModule::run(m_settings, m_musicDataList, nextSet);
+
+	for each (MusicData song in nextSet)
+	{
+		// TEMP
+	}
 
 }
 

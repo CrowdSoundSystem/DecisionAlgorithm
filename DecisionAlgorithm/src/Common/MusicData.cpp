@@ -22,7 +22,7 @@ void MusicData::addArtist(std::string artist){
 	m_artist = artist;
 }
 
-std::string MusicData::getArtist(){
+std::string MusicData::getArtist() const {
 	return m_artist;
 }
 
@@ -31,7 +31,7 @@ void MusicData::addSong(std::string song){
 	m_song = song;
 }
 
-std::string MusicData::getSong(){
+std::string MusicData::getSong() const {
 	return m_song;
 }
 
@@ -40,7 +40,7 @@ void MusicData::addGenre(std::string genre){
 	m_genre = genre;
 }
 
-std::string MusicData::getGenre(){
+std::string MusicData::getGenre() const {
 	return m_genre;
 }
 
@@ -48,7 +48,7 @@ void MusicData::setWeight(double weight) {
 	m_weight = weight;
 }
 
-double MusicData::getWeight(){
+double MusicData::getWeight() const {
 	return m_weight;
 }
 
@@ -68,7 +68,7 @@ void MusicData::setVoteSum(int votes){
 	m_voteSum = votes;
 }
 
-int MusicData::getVoteSum() {
+int MusicData::getVoteSum() const {
 	return m_voteSum;
 }
 

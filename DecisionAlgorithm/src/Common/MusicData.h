@@ -26,11 +26,11 @@ public:
 	{}
 
 	void addArtist(std::string);
-	std::string getArtist();
+	std::string getArtist() const;
 	void addSong(std::string);
-	std::string getSong();
+	std::string getSong() const;
 	void addGenre(std::string);
-	std::string getGenre();
+	std::string getGenre() const;
 
 	Tier getTier();
 
@@ -39,10 +39,10 @@ public:
 	void mulWeight(double);
 
 	void setVoteSum(int);
-	int getVoteSum();
+	int getVoteSum() const;
 
 	void setWeight(double);
-	double getWeight();
+	double getWeight() const;
 
 
 private:

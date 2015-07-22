@@ -11,7 +11,11 @@ class GenerationModule {
 
 public:
 
-	static void run(DecisionSettings&, MusicDataList&);
+	static void run(DecisionSettings&, MusicDataList&, MusicDataList&);
+
+private:
+
+	static bool compareWeight(const MusicData& first, const MusicData& second);
 
 };
 

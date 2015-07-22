@@ -23,6 +23,8 @@ struct DecisionSettings {
 
 	std::map<Tier, float> m_tierMultipliers;
 
+	int m_numSongsGenerated;
+
 };
 
 #endif

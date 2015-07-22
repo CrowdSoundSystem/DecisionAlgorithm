@@ -5,6 +5,6 @@
 
 #include "MusicData.h"
 
-typedef std::list<MusicData*> MusicDataList;
+typedef std::list<MusicData> MusicDataList;
 
 #endif

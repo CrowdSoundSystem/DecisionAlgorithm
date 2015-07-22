@@ -25,7 +25,7 @@ int main()
 	settings.m_tierMultipliers[Tier_A] = 0.5f;
 	settings.m_tierMultipliers[Tier_G] = 0.4f;
 
-
+	settings.m_numSongsGenerated = 3;
 	
 	DecisionAlgorithm algorithm(settings);
 
