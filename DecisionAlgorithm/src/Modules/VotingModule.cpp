@@ -15,13 +15,16 @@ void VotingModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) 
 
 float VotingModule::getVoteWeight(DecisionSettings& settings) {
 	switch (settings.m_voteWeight) {
+
 		case DecisionSettings::VoteWeight_Low:
-			0.5f;
+			return settings.m_countWeight * 0.5f;
+
 		case DecisionSettings::VoteWeight_High:
-			1.5f;
+			return settings.m_countWeight * 1.5f;
+
 		default:
 		case DecisionSettings::VoteWeight_Equal:
-			return 1.0f;
+			return settings.m_countWeight;
 	}
 }
 
