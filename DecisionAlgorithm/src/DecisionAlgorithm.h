@@ -3,9 +3,9 @@
 
 #include <list>
 
-#include "Common\Const.h"
-#include "Common\DecisionSettings.h"
-#include "Common\MusicData.h"
+#include "Common/Const.h"
+#include "Common/DecisionSettings.h"
+#include "Common/MusicData.h"
 
 class DecisionAlgorithm {
 

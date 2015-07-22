@@ -21,7 +21,7 @@ class MusicData {
 
 public:
 
-	MusicData::MusicData()
+	MusicData()
 		: m_weight(0), m_voteSum(0), m_tier(0)
 	{}
 
