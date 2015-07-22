@@ -1,7 +1,7 @@
 #ifndef CountingModuleTests_HEADER
 #define CountingModuleTests_HEADER
 
-#include "..\..\src\Modules\CountingModule.h"
+#include "..\..\src\Common\Const.h"
 
 class CountingModuleTests {
 
@@ -9,7 +9,7 @@ public:
 	static void runTests();
 
 private:
-	static std::list<MusicData*> getMusicTestData();
+	static MusicDataList getMusicTestData();
 
 	static void test_1();
 

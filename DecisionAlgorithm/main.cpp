@@ -7,8 +7,10 @@
 int main()
 {
 
-	//TestMain::runTests();
+	printf("Running Tests\n");
+	TestMain::runTests();
 
+	printf("Running Algorithm\n");
 	DecisionSettings settings;
 	settings.m_countWeight = 1.0;
 
