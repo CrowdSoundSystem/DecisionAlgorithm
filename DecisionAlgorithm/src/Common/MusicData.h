@@ -22,7 +22,7 @@ class MusicData {
 public:
 
 	MusicData()
-		: m_weight(0), m_voteSum(0), m_tier(0)
+		: m_weight(0), m_voteSum(0), m_tier(0), m_count(0), m_id(0)
 	{}
 
 	void addArtist(std::string);
@@ -33,6 +33,12 @@ public:
 	std::string getGenre() const;
 
 	Tier getTier();
+
+	void setId(int);
+	int getId();
+
+	void setCount(int);
+	int getCount();
 
 	void addWeight(double);
 	void subWeight(double);
@@ -47,6 +53,8 @@ public:
 
 private:
 
+	int m_id;
+
 	int m_tier;
 
 	std::string m_artist;
@@ -56,6 +64,7 @@ private:
 	double m_weight;
 
 	int m_voteSum;
+	int m_count;
 
 };
 

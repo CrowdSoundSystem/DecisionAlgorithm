@@ -17,6 +17,22 @@ Tier MusicData::getTier() {
 	}
 }
 
+void MusicData::setId(int id) {
+	m_id = id;
+}
+
+int MusicData::getId() {
+	return m_id;
+}
+
+void MusicData::setCount(int count) {
+	m_count = count;
+}
+
+int MusicData::getCount() {
+	return m_count;
+}
+
 void MusicData::addArtist(std::string artist){
 	m_tier |= Tier_A;
 	m_artist = artist;

@@ -7,7 +7,31 @@
 
 void DecisionAlgorithm::getMusicData() {
 
-	// TEMP: Pull from DB
+	skrillex::ResultSet<skrillex::Song> songs;
+	m_db->getSongs(songs);
+
+	for (auto& song : songs) {
+
+		MusicData musicData;
+
+		if (!song.name.empty()) {
+			musicData.addSong(song.name);
+		}
+
+		if (!song.artist.name.empty()) {
+			musicData.addArtist(song.artist.name);
+		}
+
+		if (!song.genre.name.empty()) {
+			musicData.addArtist(song.genre.name);
+		}
+
+		musicData.setCount(song.count);
+		musicData.setVoteSum(song.votes);
+		musicData.setId(song.id);
+
+		m_musicDataList.push_back(musicData);
+	}
 
 }
 
@@ -23,12 +47,7 @@ void DecisionAlgorithm::run() {
 	MusicDataList::iterator itr = nextSet.begin();
 	while (itr != nextSet.end())
 	{
-		// TEMP: Push to DB
-
-
-		
-
-
+		m_db->queueSong((*itr).getId());
 		++itr;
 	}
 
