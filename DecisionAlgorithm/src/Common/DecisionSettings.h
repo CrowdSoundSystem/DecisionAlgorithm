@@ -25,7 +25,7 @@ struct DecisionSettings {
 
 	int m_numSongsGenerated;
 
-	static DecisionSettings default() {
+	static DecisionSettings defaultSettings() {
 		DecisionSettings settings;
 		settings.m_countWeight = 1.0;
 

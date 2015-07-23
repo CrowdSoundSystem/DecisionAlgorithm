@@ -25,6 +25,10 @@ void DecisionAlgorithm::run() {
 	{
 		// TEMP: Push to DB
 
+
+		
+
+
 		++itr;
 	}
 
