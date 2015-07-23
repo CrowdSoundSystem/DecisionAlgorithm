@@ -37,6 +37,8 @@ void DecisionAlgorithm::getMusicData() {
 
 void DecisionAlgorithm::run() {
 
+	getMusicData();
+
 	MusicDataList nextSet;
 
 	CountingModule::run(m_settings, m_musicDataList);

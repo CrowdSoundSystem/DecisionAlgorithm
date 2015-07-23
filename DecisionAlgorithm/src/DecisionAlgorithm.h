@@ -20,12 +20,11 @@ public:
 	{
 	}
 
-	void getMusicData();
-
 	void run();
 
-
 private:
+
+	void getMusicData();
 
 	MusicDataList m_musicDataList;
 	DecisionSettings m_settings;
