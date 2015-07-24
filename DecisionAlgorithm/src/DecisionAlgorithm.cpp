@@ -9,11 +9,17 @@ void DecisionAlgorithm::getMusicData() {
 
 	skrillex::ResultSet<skrillex::Song> songs;
 	m_db->getSongs(songs);
+    
+    m_musicDataList.clear();
 
 	for (auto& song : songs) {
 
 		MusicData musicData;
-
+        
+        if(song.last_played  > 0) {
+            continue;
+        }
+        
 		if (!song.name.empty()) {
 			musicData.addSong(song.name);
 		}
