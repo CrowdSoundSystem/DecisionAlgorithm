@@ -16,9 +16,11 @@ void DecisionAlgorithm::getMusicData() {
 
 		MusicData musicData;
         
-        if(song.last_played  > 0) {
+		// TEMP: skip any songs that have already played. We want better logic here to repeat if enough time has passed?
+        if(song.last_played > 0) {
             continue;
         }
+		// END TEMP
         
 		if (!song.name.empty()) {
 			musicData.addSong(song.name);
