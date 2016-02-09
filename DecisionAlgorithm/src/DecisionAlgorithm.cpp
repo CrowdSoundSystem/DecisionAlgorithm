@@ -1,27 +1,32 @@
 #include "DecisionAlgorithm.h"
 
+#include <iostream>
+
 #include "Modules/CountingModule.h"
 #include "Modules/GenerationModule.h"
 #include "Modules/TierModule.h"
 #include "Modules/VotingModule.h"
 
+using namespace std;
+
 void DecisionAlgorithm::getMusicData() {
 
 	skrillex::ResultSet<skrillex::Song> songs;
 	m_db->getSongs(songs);
-    
+
     m_musicDataList.clear();
 
 	for (auto& song : songs) {
 
 		MusicData musicData;
-        
+
 		// TEMP: skip any songs that have already played. We want better logic here to repeat if enough time has passed?
         if(song.last_played > 0) {
+            cout << "[Algorithm] Dropping " << song.name << ", as it was previously played" << endl;
             continue;
         }
 		// END TEMP
-        
+
 		if (!song.name.empty()) {
 			musicData.addSong(song.name);
 		}
@@ -44,8 +49,10 @@ void DecisionAlgorithm::getMusicData() {
 }
 
 void DecisionAlgorithm::run() {
-
 	getMusicData();
+
+    cout << "[Algorithm] Retrieved " << m_musicDataList.size() << " songs from db." << endl;
+    cout << "[Algorithm] Running modules..." << endl;
 
 	MusicDataList nextSet;
 
@@ -57,6 +64,7 @@ void DecisionAlgorithm::run() {
 	MusicDataList::iterator itr = nextSet.begin();
 	while (itr != nextSet.end())
 	{
+        cout << "[Algorithm] Queueing song: " << itr->getSong() << endl;
 		m_db->queueSong((*itr).getId());
 		++itr;
 	}
