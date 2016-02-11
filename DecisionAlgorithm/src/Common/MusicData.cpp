@@ -60,24 +60,24 @@ std::string MusicData::getGenre() const {
 	return m_genre;
 }
 
-void MusicData::setWeight(double weight) {
-	m_weight = weight;
+void MusicData::setScore(double value) {
+	m_score = value;
 }
 
-double MusicData::getWeight() const {
-	return m_weight;
+double MusicData::getScore() const {
+	return m_score;
 }
 
-void MusicData::addWeight(double value) {
-	m_weight += value;
+void MusicData::addScore(double value) {
+	m_score += value;
 }
 
-void MusicData::subWeight(double value) {
-	m_weight -= value;
+void MusicData::subScore(double value) {
+	m_score -= value;
 }
 
-void MusicData::mulWeight(double value) {
-	m_weight *= value;
+void MusicData::mulScore(double value) {
+	m_score *= value;
 }
 
 void MusicData::setVoteSum(int votes){

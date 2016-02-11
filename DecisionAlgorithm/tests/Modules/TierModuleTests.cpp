@@ -18,40 +18,40 @@ MusicDataList TierModuleTests::getMusicTestData() {
 	data1.addArtist("Disturbed");
 	data1.addSong("Indestructible");
 	data1.addGenre("Rock");
-	data1.setWeight(1.0);
+	data1.setScore(1.0);
 	musicData.push_back(data1);
 
 	MusicData data2;
 	data2.addArtist("Daft Punk");
 	data2.addSong("Harder, Better, Faster, Stronger");
-	data2.setWeight(1.0);
+	data2.setScore(1.0);
 	musicData.push_back(data2);
 
 	MusicData data3;
 	data3.addArtist("Nero");
 	data3.addGenre("House");
-	data3.setWeight(1.0);
+	data3.setScore(1.0);
 	musicData.push_back(data3);
 
 	MusicData data4;
 	data4.addSong("One");
 	data4.addGenre("Rock");
-	data4.setWeight(1.0);
+	data4.setScore(1.0);
 	musicData.push_back(data4);
 
 	MusicData data5;
 	data5.addArtist("Coyote Kisses");
-	data5.setWeight(1.0);
+	data5.setScore(1.0);
 	musicData.push_back(data5);
 
 	MusicData data6;
 	data6.addSong("Maestro");
-	data6.setWeight(1.0);
+	data6.setScore(1.0);
 	musicData.push_back(data6);
 
 	MusicData data7;
 	data7.addGenre("Pop");
-	data7.setWeight(1.0);
+	data7.setScore(1.0);
 	musicData.push_back(data7);
 
 	return musicData;
@@ -108,9 +108,9 @@ void TierModuleTests::test_2() {
 	while (itr != musicList.end())
 	{
 		if ((*itr).getTier() == Tier_SAG) {
-			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
+			assert((*itr).getScore() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
 		} else {
-			assert((*itr).getWeight() == 1.0);
+			assert((*itr).getScore() == 1.0);
 		}
 
 		++itr;
@@ -133,15 +133,15 @@ void TierModuleTests::test_3() {
 	while (itr != musicList.end())
 	{
 		if ((*itr).getTier() == Tier_SAG) {
-			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
+			assert((*itr).getScore() == 1.0 * settings.m_tierMultipliers[Tier_SAG]);
 		} else if ((*itr).getTier() == Tier_AG) {
-			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_AG]);
+			assert((*itr).getScore() == 1.0 * settings.m_tierMultipliers[Tier_AG]);
 		} else if ((*itr).getTier() == Tier_SA) {
-			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SA]);
+			assert((*itr).getScore() == 1.0 * settings.m_tierMultipliers[Tier_SA]);
 		} else if ((*itr).getTier() == Tier_SG) {
-			assert((*itr).getWeight() == 1.0 * settings.m_tierMultipliers[Tier_SG]);
+			assert((*itr).getScore() == 1.0 * settings.m_tierMultipliers[Tier_SG]);
 		} else {
-			assert((*itr).getWeight() == 1.0);
+			assert((*itr).getScore() == 1.0);
 		}
 
 		++itr;

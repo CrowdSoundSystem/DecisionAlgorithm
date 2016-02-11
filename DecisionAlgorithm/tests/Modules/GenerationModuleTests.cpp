@@ -13,31 +13,31 @@ MusicDataList GenerationModuleTests::getMusicTestData() {
 	MusicDataList musicData;
 
 	MusicData data1;
-	data1.setWeight(1.0);
+	data1.setScore(1.0);
 	musicData.push_back(data1);
 
 	MusicData data2;
-	data2.setWeight(12.1);
+	data2.setScore(12.1);
 	musicData.push_back(data2);
 
 	MusicData data3;
-	data3.setWeight(4.3);
+	data3.setScore(4.3);
 	musicData.push_back(data3);
 
 	MusicData data4;
-	data4.setWeight(-4.0);
+	data4.setScore(-4.0);
 	musicData.push_back(data4);
 
 	MusicData data5;
-	data5.setWeight(0.0);
+	data5.setScore(0.0);
 	musicData.push_back(data5);
 
 	MusicData data6;
-	data6.setWeight(9.3);
+	data6.setScore(9.3);
 	musicData.push_back(data6);
 
 	MusicData data7;
-	data7.setWeight(9.2);
+	data7.setScore(9.2);
 	musicData.push_back(data7);
 
 	return musicData;
@@ -60,8 +60,8 @@ void GenerationModuleTests::test_1() {
 	MusicDataList::iterator itr = musicList.begin();
 	while (itr != musicList.end())
 	{
-		assert((*itr).getWeight() < previousWeight);
-		previousWeight = (*itr).getWeight();
+		assert((*itr).getScore() < previousWeight);
+		previousWeight = (*itr).getScore();
 
 		++itr;
 	}

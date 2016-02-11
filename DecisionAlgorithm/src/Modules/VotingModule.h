@@ -2,6 +2,7 @@
 #define VotingModule_HEADER
 
 #include <list>
+#include <unordered_map>
 
 #include "../Common/DecisionSettings.h"
 #include "../Common/MusicData.h"

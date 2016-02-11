@@ -37,13 +37,15 @@ void VotingModuleTests::test_1() {
 	DecisionSettings settings;
 	settings.m_countWeight = 1.0f;
 	settings.m_voteWeight = DecisionSettings::VoteWeight_Equal;
+	settings.m_artistWeight = 0;
+	settings.m_genreWeight = 0;
 
 	VotingModule::run(settings, musicList);
 
 	MusicDataList::iterator itr = musicList.begin();
 	while (itr != musicList.end())
 	{
-		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight);
+		assert((*itr).getScore() == (*itr).getVoteSum()*settings.m_countWeight);
 
 		++itr;
 	}
@@ -56,13 +58,15 @@ void VotingModuleTests::test_2() {
 	DecisionSettings settings;
 	settings.m_countWeight = 1.0f;
 	settings.m_voteWeight = DecisionSettings::VoteWeight_High;
+	settings.m_artistWeight = 0;
+	settings.m_genreWeight = 0;
 
 	VotingModule::run(settings, musicList);
 
 	MusicDataList::iterator itr = musicList.begin();
 	while (itr != musicList.end())
 	{
-		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight*1.5);
+		assert((*itr).getScore() == (*itr).getVoteSum()*settings.m_countWeight*1.5);
 
 		++itr;
 	}
@@ -75,13 +79,15 @@ void VotingModuleTests::test_3() {
 	DecisionSettings settings;
 	settings.m_countWeight = 1.0f;
 	settings.m_voteWeight = DecisionSettings::VoteWeight_Low;
+	settings.m_artistWeight = 0;
+	settings.m_genreWeight = 0;
 
 	VotingModule::run(settings, musicList);
 
 	MusicDataList::iterator itr = musicList.begin();
 	while (itr != musicList.end())
 	{
-		assert((*itr).getWeight() == (*itr).getVoteSum()*settings.m_countWeight*0.5);
+		assert((*itr).getScore() == (*itr).getVoteSum()*settings.m_countWeight*0.5);
 
 		++itr;
 	}

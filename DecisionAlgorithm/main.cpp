@@ -8,14 +8,16 @@ int main()
 {
 
 	printf("Running Tests\n");
-	TestMain::runTests();
+	//TestMain::runTests();
 
 	printf("Running Algorithm\n");
 
-	DecisionAlgorithm algorithm(DecisionSettings::defaultSettings(), nullptr);
 
-	while (true) {
-		algorithm.run();
-	}
+	DecisionSettings settings = DecisionSettings::defaultSettings();
+	settings.m_numSongsGenerated = 30;
+
+	DecisionAlgorithm algorithm(settings);
+
+	algorithm.run();
 	
 }

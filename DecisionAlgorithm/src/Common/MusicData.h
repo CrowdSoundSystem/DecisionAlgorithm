@@ -5,16 +5,13 @@
 
 enum Tier {
 	Tier_INVALID = 0,
-
-	Tier_S = (1u << 0),
-	Tier_A = (1u << 1),
-	Tier_G = (1u << 2),
-
-	Tier_SG = Tier_S + Tier_G,
-	Tier_SA = Tier_S + Tier_A,
-	Tier_AG = Tier_A + Tier_G,
-
-	Tier_SAG = Tier_S + Tier_A + Tier_G
+	Tier_SAG,
+	Tier_SA,
+	Tier_SG, 
+	Tier_AG,
+	Tier_S,
+	Tier_A,
+	Tier_G
 };
 
 class MusicData {
@@ -22,7 +19,11 @@ class MusicData {
 public:
 
 	MusicData()
-		: m_weight(0), m_voteSum(0), m_tier(0), m_count(0), m_id(0)
+		: m_score(0), m_voteSum(0), m_tier(0), m_count(0), m_id(0)
+	{}
+
+	MusicData(double score, int voteSum, int tier, int count, int id, std::string song, std::string artist, std::string genre)
+		: m_score(score), m_voteSum(voteSum), m_tier(tier), m_count(count), m_id(id), m_song(song), m_artist(artist), m_genre(genre)
 	{}
 
 	void addArtist(std::string);
@@ -40,15 +41,15 @@ public:
 	void setCount(int);
 	int getCount();
 
-	void addWeight(double);
-	void subWeight(double);
-	void mulWeight(double);
+	void addScore(double);
+	void subScore(double);
+	void mulScore(double);
 
 	void setVoteSum(int);
 	int getVoteSum() const;
 
-	void setWeight(double);
-	double getWeight() const;
+	void setScore(double);
+	double getScore() const;
 
 
 private:
@@ -61,7 +62,7 @@ private:
 	std::string m_song;
 	std::string m_genre;
 
-	double m_weight;
+	double m_score;
 
 	int m_voteSum;
 	int m_count;

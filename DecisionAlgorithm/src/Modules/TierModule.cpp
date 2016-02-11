@@ -12,7 +12,7 @@ void TierModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) {
 			multiplier = settings.m_tierMultipliers[tier];
 		}
 
-		(*setItr).mulWeight(multiplier);
+		(*setItr).mulScore(multiplier);
 	}
 
 }
