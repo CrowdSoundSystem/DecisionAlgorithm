@@ -18,8 +18,8 @@ struct DecisionSettings {
 
 	VoteWeight m_voteWeight;
 
-	VoteWeight m_songGenreWeight;	// Voting for song, weight for given genre
-	VoteWeight m_artistGenreWeight;	// Voting for artist, weight for given genre
+	VoteWeight m_genreWeight;	// Voting for song, weight for given genre
+	VoteWeight m_artistWeight;	// Voting for song, weight for given artist
 
 	std::map<Tier, float> m_tierMultipliers;
 
@@ -31,16 +31,16 @@ struct DecisionSettings {
 
 		settings.m_voteWeight = DecisionSettings::VoteWeight_Equal;
 
-		settings.m_songGenreWeight = DecisionSettings::VoteWeight_Equal;
-		settings.m_artistGenreWeight = DecisionSettings::VoteWeight_Equal;
+		settings.m_genreWeight = DecisionSettings::VoteWeight_Equal;
+		settings.m_artistWeight = DecisionSettings::VoteWeight_Equal;
 
 		settings.m_tierMultipliers[Tier_SAG] = 1.0f;
-		settings.m_tierMultipliers[Tier_SA] = 0.9f;
-		settings.m_tierMultipliers[Tier_SG] = 0.8f;
-		settings.m_tierMultipliers[Tier_AG] = 0.7f;
-		settings.m_tierMultipliers[Tier_S] = 0.6f;
-		settings.m_tierMultipliers[Tier_A] = 0.5f;
-		settings.m_tierMultipliers[Tier_G] = 0.4f;
+		settings.m_tierMultipliers[Tier_SA] = 0.8f;
+		settings.m_tierMultipliers[Tier_SG] = 0.7f;
+		settings.m_tierMultipliers[Tier_AG] = 0.5f;
+		settings.m_tierMultipliers[Tier_S] = 0.5f;
+		settings.m_tierMultipliers[Tier_A] = 0.3f;
+		settings.m_tierMultipliers[Tier_G] = 0.2f;
 
 		settings.m_numSongsGenerated = 3;
 		

@@ -12,7 +12,7 @@ int main()
 
 	printf("Running Algorithm\n");
 
-	DecisionAlgorithm algorithm(DecisionSettings::default());
+	DecisionAlgorithm algorithm(DecisionSettings::defaultSettings(), nullptr);
 
 	while (true) {
 		algorithm.run();
