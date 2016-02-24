@@ -21,12 +21,10 @@ void DecisionAlgorithm::getMusicData() {
 
 		MusicData musicData;
 
-		// TEMP: skip any songs that have already played. We want better logic here to repeat if enough time has passed?
         if(song.last_played > 0) {
-            cout << "[Algorithm] Dropping " << song.name << ", as it was previously played" << endl;
-            continue;
+			cout << "[Algorithm] Dropping " << song.name << ", as it was previously played" << endl;
+			musicData.setPreviouslyPlayed(true);
         }
-		// END TEMP
 
 		if (!song.name.empty())
 			musicData.addSong(song.name);
@@ -36,9 +34,6 @@ void DecisionAlgorithm::getMusicData() {
 
 		if (!song.genre.name.empty())
 			musicData.addArtist(song.genre.name);
-
-		if (song.last_played > 0)
-			musicData.setPreviouslyPlayed(true);
 
 		musicData.setCount(song.count);
 		musicData.setVoteSum(song.votes);
