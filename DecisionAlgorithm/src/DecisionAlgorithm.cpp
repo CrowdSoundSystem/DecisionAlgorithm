@@ -96,7 +96,7 @@ void DecisionAlgorithm::run() {
 	GenerationModule::run(m_settings, m_musicDataList, nextSet);
 
 #if DEBUG_MODE == 0
-	m_db.clearQueue();
+	m_db->clearQueue();
 #endif
 
 	MusicDataList::iterator itr = nextSet.begin();
