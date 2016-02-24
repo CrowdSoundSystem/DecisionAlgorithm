@@ -8,11 +8,12 @@ void TierModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) {
 		Tier tier = (*setItr).getTier();
 		float multiplier = 1.0;
 
-		if (settings.m_tierMultipliers.count(tier) == 1) {
+		if (settings.m_tierMultipliers.count(tier) == 1)
 			multiplier = settings.m_tierMultipliers[tier];
-		}
+
+		if ((*setItr).getPreviouslyPlayed())
+			multiplier *= settings.m_playedAgainMultipler;
 
 		(*setItr).mulScore(multiplier);
 	}
-
 }

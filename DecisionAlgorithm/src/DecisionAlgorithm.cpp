@@ -28,17 +28,17 @@ void DecisionAlgorithm::getMusicData() {
         }
 		// END TEMP
 
-		if (!song.name.empty()) {
+		if (!song.name.empty())
 			musicData.addSong(song.name);
-		}
 
-		if (!song.artist.name.empty()) {
+		if (!song.artist.name.empty())
 			musicData.addArtist(song.artist.name);
-		}
 
-		if (!song.genre.name.empty()) {
+		if (!song.genre.name.empty())
 			musicData.addArtist(song.genre.name);
-		}
+
+		if (song.last_played > 0)
+			musicData.setPreviouslyPlayed(true);
 
 		musicData.setCount(song.count);
 		musicData.setVoteSum(song.votes);

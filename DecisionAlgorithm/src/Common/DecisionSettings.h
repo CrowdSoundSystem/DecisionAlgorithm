@@ -21,18 +21,22 @@ struct DecisionSettings {
 	float m_genreWeight;	// Voting for song, weight for given genre
 	float m_artistWeight;	// Voting for song, weight for given artist
 
+	float m_playedAgainMultipler;
+
 	std::map<Tier, float> m_tierMultipliers;
 
 	int m_numSongsGenerated;
 
 	static DecisionSettings defaultSettings() {
 		DecisionSettings settings;
-		settings.m_countWeight = 1.0;
+		settings.m_countWeight = 1.0f;
 
 		settings.m_voteWeight = DecisionSettings::VoteWeight_Equal;
 
-		settings.m_genreWeight = 0.5;
-		settings.m_artistWeight = 1.0;
+		settings.m_genreWeight = 0.5f;
+		settings.m_artistWeight = 1.0f;
+
+		settings.m_playedAgainMultipler = 0.7f;
 
 		settings.m_tierMultipliers[Tier_SAG] = 1.0f;
 		settings.m_tierMultipliers[Tier_SA] = 0.8f;

@@ -88,3 +88,10 @@ int MusicData::getVoteSum() const {
 	return m_voteSum;
 }
 
+void MusicData::setPreviouslyPlayed(bool played) {
+	m_previouslyPlayed = played;
+}
+
+bool MusicData::getPreviouslyPlayed() const {
+	return m_previouslyPlayed;
+}

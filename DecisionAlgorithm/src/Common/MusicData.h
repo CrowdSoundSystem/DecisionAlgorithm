@@ -51,6 +51,8 @@ public:
 	void setScore(double);
 	double getScore() const;
 
+	void setPreviouslyPlayed(bool);
+	bool getPreviouslyPlayed() const;
 
 private:
 
@@ -66,6 +68,8 @@ private:
 
 	int m_voteSum;
 	int m_count;
+
+	bool m_previouslyPlayed;
 
 };
 
