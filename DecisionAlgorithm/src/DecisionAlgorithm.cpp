@@ -21,10 +21,8 @@ void DecisionAlgorithm::getMusicData() {
 
 		MusicData musicData;
 
-        if(song.last_played > 0) {
-			cout << "[Algorithm] Dropping " << song.name << ", as it was previously played" << endl;
+        if(song.last_played > 0)
 			musicData.setPreviouslyPlayed(true);
-        }
 
 		if (!song.name.empty())
 			musicData.addSong(song.name);

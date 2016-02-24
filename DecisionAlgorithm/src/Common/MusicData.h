@@ -19,11 +19,11 @@ class MusicData {
 public:
 
 	MusicData()
-		: m_score(0), m_voteSum(0), m_tier(0), m_count(0), m_id(0)
+		: m_score(0), m_voteSum(0), m_tier(0), m_count(0), m_id(0), m_previouslyPlayed(false)
 	{}
 
 	MusicData(double score, int voteSum, int tier, int count, int id, std::string song, std::string artist, std::string genre)
-		: m_score(score), m_voteSum(voteSum), m_tier(tier), m_count(count), m_id(id), m_song(song), m_artist(artist), m_genre(genre)
+		: m_score(score), m_voteSum(voteSum), m_tier(tier), m_count(count), m_id(id), m_song(song), m_artist(artist), m_genre(genre), m_previouslyPlayed(false)
 	{}
 
 	void addArtist(std::string);
