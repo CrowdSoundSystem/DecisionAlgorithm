@@ -31,7 +31,7 @@ void DecisionAlgorithm::getMusicData() {
 			musicData.addArtist(song.artist.name);
 
 		if (!song.genre.name.empty())
-			musicData.addArtist(song.genre.name);
+			musicData.addGenre(song.genre.name);
 
 		musicData.setCount(song.count);
 		musicData.setVoteSum(song.votes);
