@@ -11,9 +11,9 @@ void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataS
 		nextSet.push_back((*itr));
 		counter++;
 
-		if (counter == settings.m_numSongsGenerated) {
+		/*if (counter == settings.m_numSongsGenerated) {
 			break;
-		}
+		}*/
 		++itr;
 	}
 
