@@ -8,7 +8,7 @@
 #include "Common/DecisionSettings.h"
 #include "Common/MusicData.h"
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 #if DEBUG_MODE == 0
 // DB stuff

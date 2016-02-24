@@ -8,7 +8,7 @@ int main()
 {
 
 	printf("Running Tests\n");
-	//TestMain::runTests();
+	TestMain::runTests();
 
 	printf("Running Algorithm\n");
 

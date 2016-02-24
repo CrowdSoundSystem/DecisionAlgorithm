@@ -1,20 +1,11 @@
 #include "MusicData.h"
 
-Tier MusicData::getTier() {
+void MusicData::setTier(Tier tier) {
+	m_tier = tier;
+}
 
-	switch (m_tier)
-	{
-		case Tier_S:
-		case Tier_A:
-		case Tier_G:
-		case Tier_SG:
-		case Tier_SA:
-		case Tier_AG:
-		case Tier_SAG:
-			return static_cast<Tier>(m_tier);
-		default:
-			return Tier_INVALID;
-	}
+Tier MusicData::getTier() {
+	return m_tier;
 }
 
 void MusicData::setId(int id) {
@@ -34,7 +25,23 @@ int MusicData::getCount() {
 }
 
 void MusicData::addArtist(std::string artist){
-	m_tier |= Tier_A;
+	switch (m_tier)
+	{
+	case Tier_SG:
+		m_tier = Tier_SAG;
+		break;
+	case Tier_S:
+		m_tier = Tier_SA;
+		break;
+	case Tier_G:
+		m_tier = Tier_AG;
+		break;
+	case Tier_INVALID:
+	default:
+		m_tier = Tier_A;
+		break;
+	}
+
 	m_artist = artist;
 }
 
@@ -43,7 +50,23 @@ std::string MusicData::getArtist() const {
 }
 
 void MusicData::addSong(std::string song){
-	m_tier |= Tier_S;
+	switch (m_tier)
+	{
+	case Tier_AG:
+		m_tier = Tier_SAG;
+		break;
+	case Tier_A:
+		m_tier = Tier_SA;
+		break;
+	case Tier_G:
+		m_tier = Tier_SG;
+		break;
+	case Tier_INVALID:
+	default:
+		m_tier = Tier_S;
+		break;
+	}
+
 	m_song = song;
 }
 
@@ -52,7 +75,23 @@ std::string MusicData::getSong() const {
 }
 
 void MusicData::addGenre(std::string genre){
-	m_tier |= Tier_G;
+	switch (m_tier)
+	{
+	case Tier_SA:
+		m_tier = Tier_SAG;
+		break;
+	case Tier_S:
+		m_tier = Tier_SG;
+		break;
+	case Tier_A:
+		m_tier = Tier_AG;
+		break;
+	case Tier_INVALID:
+	default:
+		m_tier = Tier_G;
+		break;
+	}
+
 	m_genre = genre;
 }
 
