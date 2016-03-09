@@ -1,30 +1,15 @@
 #include "VotingModule.h"
 
-void VotingModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) {
-
-	std::unordered_map<std::string, int > artistCounts;
-	std::unordered_map<std::string, int > genreCounts;
-
-	// First iteration for direct votes
+void VotingModule::run(DecisionSettings& settings, MusicDataList& musicDataSet) 
+{
 	MusicDataList::iterator setItr;
-	for (setItr = musicDataSet.begin(); setItr != musicDataSet.end(); ++setItr) {
+	for (setItr = musicDataSet.begin(); setItr != musicDataSet.end(); ++setItr) 
+	{
+		float artistScore = settings.m_artistWeight * setItr->getArtistVotes();
+		float genreScore = settings.m_genreWeight * setItr->getGenreVotes();
+		float baseScore = getVoteWeight(settings) * setItr->getVotes();
 
-		int voteSum = (*setItr).getVoteSum();
-
-		artistCounts[(*setItr).getArtist()] += voteSum;
-		genreCounts[(*setItr).getGenre()] += voteSum;
-
-		float voteWeight = getVoteWeight(settings);
-		(*setItr).addScore(voteSum*voteWeight);
-	}
-
-	// Second iteration for artist/genre votes
-	for (setItr = musicDataSet.begin(); setItr != musicDataSet.end(); ++setItr) {
-
-		float artistScore = settings.m_artistWeight * artistCounts[(*setItr).getArtist()];
-		float genreScore = settings.m_genreWeight * genreCounts[(*setItr).getGenre()];
-
-		(*setItr).addScore(artistScore + genreScore);
+		setItr->addScore(artistScore + genreScore + baseScore);
 	}
 }
 

@@ -1,5 +1,19 @@
 #include "MusicData.h"
 
+void MusicData::setSong(skrillex::Song& song)
+{
+	m_song = song;
+
+	if (!getSong().empty())
+		m_tier = Tier_S;
+
+	if (!getArtist().empty())
+		m_tier = static_cast<Tier>(m_tier + Tier_A);
+
+	if (!getGenre().empty())
+		m_tier = static_cast<Tier>(m_tier + Tier_G);
+}
+
 void MusicData::setTier(Tier tier) {
 	m_tier = tier;
 }
@@ -8,95 +22,36 @@ Tier MusicData::getTier() {
 	return m_tier;
 }
 
-void MusicData::setId(int id) {
-	m_id = id;
-}
-
 int MusicData::getId() {
-	return m_id;
-}
-
-void MusicData::setCount(int count) {
-	m_count = count;
+	return m_song.id;
 }
 
 int MusicData::getCount() {
-	return m_count;
+	return m_song.count;
 }
 
-void MusicData::addArtist(std::string artist){
-	switch (m_tier)
-	{
-	case Tier_SG:
-		m_tier = Tier_SAG;
-		break;
-	case Tier_S:
-		m_tier = Tier_SA;
-		break;
-	case Tier_G:
-		m_tier = Tier_AG;
-		break;
-	case Tier_INVALID:
-	default:
-		m_tier = Tier_A;
-		break;
-	}
+int MusicData::getVotes() {
+	return m_song.votes;
+}
 
-	m_artist = artist;
+int MusicData::getArtistVotes() {
+	return m_song.artist.votes;
+}
+
+int MusicData::getGenreVotes() {
+	return m_song.genre.votes;
 }
 
 std::string MusicData::getArtist() const {
-	return m_artist;
-}
-
-void MusicData::addSong(std::string song){
-	switch (m_tier)
-	{
-	case Tier_AG:
-		m_tier = Tier_SAG;
-		break;
-	case Tier_A:
-		m_tier = Tier_SA;
-		break;
-	case Tier_G:
-		m_tier = Tier_SG;
-		break;
-	case Tier_INVALID:
-	default:
-		m_tier = Tier_S;
-		break;
-	}
-
-	m_song = song;
+	return m_song.artist.name;
 }
 
 std::string MusicData::getSong() const {
-	return m_song;
-}
-
-void MusicData::addGenre(std::string genre){
-	switch (m_tier)
-	{
-	case Tier_SA:
-		m_tier = Tier_SAG;
-		break;
-	case Tier_S:
-		m_tier = Tier_SG;
-		break;
-	case Tier_A:
-		m_tier = Tier_AG;
-		break;
-	case Tier_INVALID:
-	default:
-		m_tier = Tier_G;
-		break;
-	}
-
-	m_genre = genre;
+	return m_song.name;
 }
 
 std::string MusicData::getGenre() const {
-	return m_genre;
+	return m_song.genre.name;
 }
 
 void MusicData::setScore(double value) {
@@ -119,18 +74,6 @@ void MusicData::mulScore(double value) {
 	m_score *= value;
 }
 
-void MusicData::setVoteSum(int votes){
-	m_voteSum = votes;
-}
-
-int MusicData::getVoteSum() const {
-	return m_voteSum;
-}
-
-void MusicData::setPreviouslyPlayed(bool played) {
-	m_previouslyPlayed = played;
-}
-
-bool MusicData::getPreviouslyPlayed() const {
-	return m_previouslyPlayed;
+uint64_t MusicData::getPreviouslyPlayed() const {
+	return m_song.last_played;
 }

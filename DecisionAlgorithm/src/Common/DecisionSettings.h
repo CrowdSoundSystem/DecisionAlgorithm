@@ -27,6 +27,8 @@ struct DecisionSettings {
 
 	int m_numSongsGenerated;
 
+	float m_minsBeforeCanPlayAgain;
+
 	static DecisionSettings defaultSettings() {
 		DecisionSettings settings;
 		settings.m_countWeight = 1.0f;
@@ -48,6 +50,8 @@ struct DecisionSettings {
 
 		settings.m_numSongsGenerated = 3;
 		
+		settings.m_minsBeforeCanPlayAgain = 15;
+
 		return settings;
 	}
 

@@ -2,16 +2,22 @@
 #define MusicData_HEADER
 
 #include <string>
+#include <stdint.h>
+
+#include "skrillex/skrillex.hpp"
 
 enum Tier {
 	Tier_INVALID = 0,
-	Tier_SAG,
-	Tier_SA,
-	Tier_SG, 
-	Tier_AG,
-	Tier_S,
-	Tier_A,
-	Tier_G
+
+	Tier_S = 1 << 0,
+	Tier_A = 1 << 1,
+	Tier_G = 1 << 2,
+
+	Tier_SA	= Tier_S | Tier_A,
+	Tier_SG	= Tier_S | Tier_G,
+	Tier_AG	= Tier_G | Tier_A,
+
+	Tier_SAG = Tier_S | Tier_A | Tier_G
 };
 
 class MusicData {
@@ -19,58 +25,43 @@ class MusicData {
 public:
 
 	MusicData()
-		: m_score(0), m_voteSum(0), m_tier(Tier_INVALID), m_count(0), m_id(0), m_previouslyPlayed(false)
+		: m_score(0), m_tier(Tier_INVALID)
 	{}
 
-	MusicData(double score, int voteSum, int tier, int count, int id, std::string song, std::string artist, std::string genre)
-		: m_score(score), m_voteSum(voteSum), m_tier(static_cast<Tier>(tier)), m_count(count), m_id(id), m_song(song), m_artist(artist), m_genre(genre), m_previouslyPlayed(false)
+	MusicData(double score, int tier)
+		: m_score(score), m_tier(static_cast<Tier>(tier))
 	{}
 
-	void addArtist(std::string);
+	void setSong(skrillex::Song&);
+
 	std::string getArtist() const;
-	void addSong(std::string);
 	std::string getSong() const;
-	void addGenre(std::string);
 	std::string getGenre() const;
 
 	Tier getTier();
 	void setTier(Tier);
 
-	void setId(int);
 	int getId();
-
-	void setCount(int);
 	int getCount();
+	int getVotes();
+	int getArtistVotes();
+	int getGenreVotes();
 
 	void addScore(double);
 	void subScore(double);
 	void mulScore(double);
 
-	void setVoteSum(int);
-	int getVoteSum() const;
-
-	void setScore(double);
+	void setScore(double value);
 	double getScore() const;
 
-	void setPreviouslyPlayed(bool);
-	bool getPreviouslyPlayed() const;
+	uint64_t getPreviouslyPlayed() const;
 
 private:
 
-	int m_id;
-
 	Tier m_tier;
-
-	std::string m_artist;
-	std::string m_song;
-	std::string m_genre;
-
 	double m_score;
 
-	int m_voteSum;
-	int m_count;
-
-	bool m_previouslyPlayed;
+	skrillex::Song m_song;
 
 };
 
