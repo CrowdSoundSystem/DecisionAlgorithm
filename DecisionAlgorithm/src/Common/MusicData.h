@@ -32,7 +32,7 @@ public:
 		: m_score(score), m_tier(static_cast<Tier>(tier))
 	{}
 
-	void setSong(skrillex::Song&);
+	void setSong(const skrillex::Song&);
 
 	std::string getArtist() const;
 	std::string getSong() const;

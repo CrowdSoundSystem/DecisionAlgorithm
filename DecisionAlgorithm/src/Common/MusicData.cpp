@@ -1,6 +1,6 @@
 #include "MusicData.h"
 
-void MusicData::setSong(skrillex::Song& song)
+void MusicData::setSong(const skrillex::Song& song)
 {
 	m_song = song;
 
