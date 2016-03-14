@@ -3,6 +3,7 @@
 
 #include <list>
 #include <memory>
+#include <mutex>
 
 #include "Common/Const.h"
 #include "Common/DecisionSettings.h"
@@ -29,7 +30,7 @@ private:
 	MusicDataList m_musicDataList;
 
 	std::shared_ptr<skrillex::DB> m_db;
-
+    std::mutex m_run_mutex;
 };
 
 #endif

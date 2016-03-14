@@ -27,6 +27,8 @@ void DecisionAlgorithm::getMusicData() {
 }
 
 void DecisionAlgorithm::run() {
+    lock<mutex> lock(m_run_mutex);
+
 	getMusicData();
 
     cout << "[Algorithm] Retrieved " << m_musicDataList.size() << " songs from db." << endl;
