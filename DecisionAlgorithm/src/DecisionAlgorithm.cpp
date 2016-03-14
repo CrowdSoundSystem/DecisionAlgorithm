@@ -27,7 +27,7 @@ void DecisionAlgorithm::getMusicData() {
 }
 
 void DecisionAlgorithm::run() {
-    lock<mutex> lock(m_run_mutex);
+    lock_guard<mutex> lock(m_run_mutex);
 
 	getMusicData();
 
