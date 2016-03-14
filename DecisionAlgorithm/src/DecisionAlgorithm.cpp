@@ -1,6 +1,7 @@
 #include "DecisionAlgorithm.h"
 
 #include <iostream>
+#include <vector>
 
 #include "Modules/CountingModule.h"
 #include "Modules/GenerationModule.h"
@@ -16,7 +17,7 @@ void DecisionAlgorithm::getMusicData() {
 	skrillex::ResultSet<skrillex::Song> songs;
 	m_db->getSongs(songs);
 
-	for (auto& song : songs) 
+	for (auto& song : songs)
 	{
 		MusicData musicData;
 		musicData.setSong(song);
@@ -38,14 +39,17 @@ void DecisionAlgorithm::run() {
 	TierModule::run(m_settings, m_musicDataList);
 	GenerationModule::run(m_settings, m_musicDataList, nextSet);
 
-	m_db->clearQueue();
+
+	vector<int> songIds;
 
 	MusicDataList::iterator itr = nextSet.begin();
 	while (itr != nextSet.end())
 	{
 		cout << "[Algorithm] Queueing song: " << itr->getSong() << endl;
-		m_db->queueSong((*itr).getId());
+		songIds.push_back(itr->getId());
 		++itr;
 	}
 
+	// Atomic set.
+	m_db->setQueue(songIds);
 }
