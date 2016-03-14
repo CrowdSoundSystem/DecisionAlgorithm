@@ -38,7 +38,7 @@ struct DecisionSettings {
 		settings.m_genreWeight = 0.5f;
 		settings.m_artistWeight = 1.0f;
 
-		settings.m_playedAgainMultipler = 0.7f;
+		settings.m_playedAgainMultipler = 0.3f;
 
 		settings.m_tierMultipliers[Tier_SAG] = 1.0f;
 		settings.m_tierMultipliers[Tier_SA] = 0.8f;
