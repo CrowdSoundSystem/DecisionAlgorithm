@@ -10,12 +10,12 @@
 
 using namespace std;
 
-void DecisionAlgorithm::getMusicData() {
+void DecisionAlgorithm::getMusicData(skrillex::ReadOptions options) {
 
 	m_musicDataList.clear();
 
 	skrillex::ResultSet<skrillex::Song> songs;
-	m_db->getSongs(songs);
+	m_db->getSongs(songs, options);
 
 	for (auto& song : songs)
 	{
@@ -26,10 +26,10 @@ void DecisionAlgorithm::getMusicData() {
 	}
 }
 
-void DecisionAlgorithm::run(DecisionSettings settings) {
+void DecisionAlgorithm::run(DecisionSettings settings, skrillex::ReadOptions options) {
     lock_guard<mutex> lock(m_run_mutex);
 
-	getMusicData();
+	getMusicData(options);
 
     cout << "[Algorithm] Retrieved " << m_musicDataList.size() << " songs from db." << endl;
     cout << "[Algorithm] Running modules..." << endl;
