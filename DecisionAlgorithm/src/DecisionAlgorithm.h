@@ -20,11 +20,11 @@ public:
 		: m_db(db)
 	{}
 
-	void run(DecisionSettings settings);
+	void run(DecisionSettings settings, skrillex::ReadOptions options);
 
 private:
 
-	void getMusicData();
+	void getMusicData(skrillex::ReadOptions options);
 
 	MusicDataList m_musicDataList;
 
