@@ -26,7 +26,7 @@ void DecisionAlgorithm::getMusicData() {
 	}
 }
 
-void DecisionAlgorithm::run() {
+void DecisionAlgorithm::run(DecisionSettings settings) {
     lock_guard<mutex> lock(m_run_mutex);
 
 	getMusicData();
@@ -36,10 +36,10 @@ void DecisionAlgorithm::run() {
 
 	MusicDataList nextSet;
 
-	CountingModule::run(m_settings, m_musicDataList);
-	VotingModule::run(m_settings, m_musicDataList);
-	TierModule::run(m_settings, m_musicDataList);
-	GenerationModule::run(m_settings, m_musicDataList, nextSet);
+	CountingModule::run(settings, m_musicDataList);
+	VotingModule::run(settings, m_musicDataList);
+	TierModule::run(settings, m_musicDataList);
+	GenerationModule::run(settings, m_musicDataList, nextSet);
 
 
 	vector<int> songIds;
