@@ -7,7 +7,9 @@ void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataS
 	// Lets try to get some variance witht he equally weighted values
 	std::random_shuffle(musicDataSet.begin(), musicDataSet.end());
 
-	musicDataSet.sort(compareWeight);
+	std::sort(musicDataSet.begin(), musicDataSet.end(), [](const MusicData& first, const MusicData& second) {
+		return (first.getScore() > second.getScore());
+	});
 
 	int counter = 0;
 	MusicDataList::iterator itr = musicDataSet.begin();
