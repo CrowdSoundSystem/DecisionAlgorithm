@@ -19,7 +19,7 @@ void TierModule::run(DecisionSettings& settings, MusicDataList& musicDataSet)
 
 		if (setItr->getPreviouslyPlayed() > 0)
 		{
-			if (currentTime - setItr->getPreviouslyPlayed() > settings.m_minsBeforeCanPlayAgain * 60)
+			if (currentTime - setItr->getPreviouslyPlayed() > settings.m_minsBeforeCanPlayAgain * 60 * 1000)
 				multiplier *= settings.m_playedAgainMultipler;
 			else
 				multiplier = 0;
