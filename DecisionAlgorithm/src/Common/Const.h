@@ -1,10 +1,10 @@
 #ifndef Const_HEADER
 #define Const_HEADER
 
-#include <list>
+#include <vector>
 
 #include "MusicData.h"
 
-typedef std::list<MusicData> MusicDataList;
+typedef std::vector<MusicData> MusicDataList;
 
 #endif

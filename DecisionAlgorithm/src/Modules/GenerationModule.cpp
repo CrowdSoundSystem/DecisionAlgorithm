@@ -1,6 +1,11 @@
 #include "GenerationModule.h"
 
-void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataSet, MusicDataList& nextSet) {
+#include <algorithm>
+
+void GenerationModule::run(DecisionSettings& settings, MusicDataList& musicDataSet, MusicDataList& nextSet) 
+{
+	// Lets try to get some variance witht he equally weighted values
+	std::random_shuffle(musicDataSet.begin(), musicDataSet.end());
 
 	musicDataSet.sort(compareWeight);
 
